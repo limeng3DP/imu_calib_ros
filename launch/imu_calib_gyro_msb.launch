@@ -1,0 +1,21 @@
+<launch>
+  <node pkg="imu_calib" type="imu_calib_node" name="imu_calibration" output="screen">
+      <param name="calib_type" value="2"/>
+      <param name="total_samples_num" value="1000"/>
+      <param name="sub_interval" value="30"/>
+      <param name="gravity_norm" value="9.80665"/>
+      <param name="initial/scale_x" value="1.5"/>
+      <param name="initial/scale_y" value="1.0"/>
+      <param name="initial/scale_z" value="1.0"/>
+      <param name="initial/bias_x" value="0.0"/>
+      <param name="initial/bias_y" value="0.0"/>
+      <param name="initial/bias_z" value="0.0"/>
+      <param name="gravity_norm" value="9.80665"/>
+
+      <param name="acc_calib_file" value="/home/lnss/imu_calib_ws/acc-msb-calibration-result.txt"/>
+      <param name="out_file" value="/home/lnss/imu_calib_ws/gyro-msb-calibration-result.txt"/>
+
+      <remap from="~imu" to="/realsense/imu"/>
+  </node>
+
+</launch>

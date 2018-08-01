@@ -1,0 +1,18 @@
+<launch>
+  <node pkg="imu_calib" type="imu_calib_node" name="imu_calibration" output="screen">
+      <param name="calib_type" value="1"/>
+      <param name="acc_raw_data_file" value="/home/lnss/imu_calib_ws/acc_log_allan.txt"/>
+      <param name="plot_allan_curve" value="true"/>
+      <param name="allan_sample_pts_num" value="50"/>
+      <param name="sample_frequency" value="200.0"/>
+      <param name="max_sample_duration" value="3.5"/>
+      <param name="initial/Q" value="1e-8"/>
+      <param name="initial/N" value="1e-3"/>
+      <param name="initial/B" value="1e-3"/>
+      <param name="initial/K" value="1e-8"/>
+      <param name="initial/R" value="1e-8"/>
+
+      <param name="ceres_iter_num" value="200"/>
+      <param name="out_file_name" value="/home/lnss/imu_calib_ws/acc-noise-calibration-result.txt"/>
+  </node>
+</launch>
